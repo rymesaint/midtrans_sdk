@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'package:midtrans_sdk/midtrans_sdk.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
+import 'package:midtrans_sdk/midtrans_sdk.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,10 +28,11 @@ class _MyAppState extends State<MyApp> {
         clientKey: DotEnv.env['MIDTRANS_CLIENT_KEY'] ?? "",
         merchantBaseUrl: DotEnv.env['MIDTRANS_MERCHANT_BASE_URL'] ?? "",
         colorTheme: ColorTheme(
-          colorPrimary: Theme.of(context).accentColor,
-          colorPrimaryDark: Theme.of(context).accentColor,
-          colorSecondary: Theme.of(context).accentColor,
+          colorPrimary: Theme.of(context).colorScheme.primary,
+          colorPrimaryDark: Theme.of(context).colorScheme.primary,
+          colorSecondary: Theme.of(context).colorScheme.secondary,
         ),
+        environment: MidtransEnvironment.sandbox,
       ),
     );
     _midtrans?.setUIKitCustomSetting(
