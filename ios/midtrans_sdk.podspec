@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  s.platform = :ios, '8.0'
+  s.platform = :ios, '11.0'
   s.ios.dependency 'MidtransKit', '1.22.0'
   s.static_framework = true
 
